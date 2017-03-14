@@ -1,0 +1,18 @@
+{
+  "name"                  :"NumberToBasket",
+  "description"           :"Item number to basket plugin",
+  "namespace"             :"NumberToBasket",
+  "author"                :"Dominik Meyer",
+  "keywords"              : ["container", "number", "basket", "template"],
+  "type"                  :"template",
+  "require"               : [],
+  "serviceProvider"       :"NumberToBasket\\Providers\\NumberToBasketServiceProvider",
+  "dataProviders"         :
+  [
+    {
+      "key"           :"NumberToBasket\\Containers\\NumberToBasketContainer",
+      "name"          :"NumberToBasket",
+      "description"   :"Display an input for the item number"
+    }
+  ]
+}

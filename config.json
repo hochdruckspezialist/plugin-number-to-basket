@@ -1,0 +1,14 @@
+[
+  {
+    "tab"       : "Settings",
+    "key"       : "number.item_number",
+    "label"     : "Number which should be added to the basket",
+    "type"      : "dropdown",
+    "possibleValues" : {
+      "0" : "variation id",
+      "1" : "variation number",
+      "2" : "item id"
+    },
+    "default": "0"
+  },
+]
