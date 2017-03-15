@@ -1,18 +1,28 @@
 {
-  "name"                  :"NumberToBasket",
-  "description"           :"Item number to basket plugin",
-  "namespace"             :"NumberToBasket",
-  "author"                :"Dominik Meyer",
-  "keywords"              : ["container", "number", "basket", "template"],
-  "type"                  :"template",
+  "version"               : "0.9.0",
+  "name"                  : "NumberToBasket",
+  "description"           : "Item number to basket plugin",
+  "namespace"             : "NumberToBasket",
+  "author"                : "plentymarkets GmbH",
+  "license"               : "AGPL-3.0",
+  "pluginIcon"            : "icon_plugin_xs.png",
+  "price"                 : 0.00,
+  "shortDescription"      : {"de": "Artikel schnell zum Warenkorb hinzufügen. ","en": "Add items fast to the basket."},
+  "authorIcon"            : "icon_author_xs.png",
+  "email"                 : "sales@plentymarkets.com",
+  "phone"                 : "+49 561 98 681 100",
+  "categories"            : ["3527"],
+  "keywords"              : ["container", "number", "basket", "template", "widget"],
+  "type"                  : "general",
   "require"               : [],
-  "serviceProvider"       :"NumberToBasket\\Providers\\NumberToBasketServiceProvider",
+  "serviceProvider"       : "NumberToBasket\\Providers\\NumberToBasketServiceProvider",
+  "javaScriptFiles"       : [],
   "dataProviders"         :
   [
     {
-      "key"           :"NumberToBasket\\Containers\\NumberToBasketContainer",
-      "name"          :"NumberToBasket",
-      "description"   :"Display an input for the item number"
+      "key"           : "NumberToBasket\\Containers\\NumberToBasketContainer",
+      "name"          : "NumberToBasket",
+      "description"   : "Display an input for the item number"
     }
   ]
 }
