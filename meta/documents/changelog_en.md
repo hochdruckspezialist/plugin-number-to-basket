@@ -4,4 +4,4 @@
 
 ### Features
 
-- Add an item through the item or variation number in the basket
+- Add an item by the ID or number to the basket

@@ -1,6 +1,6 @@
-# Number to Basket – Artikel über die Artikel/Variantennummer in den Warenkorb legen
+# Number to Basket – Artikel über die ID order Nr. in den Warenkorb legen
 
-**Number to Basket** ist ein Widget für plentymarkets 7 Webshops. Das Plugin erlaubt Ihnen, Artikel über Eingabe der Artikel oder Variantennummer in den Warenkorb zu legen.
+**Number to Basket** ist ein Widget für plentymarkets 7 Webshops. Das Plugin erlaubt Ihnen, Artikel über Eingabe der ID order Nr. in den Warenkorb zu legen.
 
 ## Number to Basket in plentymarkets einrichten
 
