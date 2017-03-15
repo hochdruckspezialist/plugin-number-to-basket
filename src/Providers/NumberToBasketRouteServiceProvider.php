@@ -7,8 +7,13 @@ use Plenty\Plugin\Routing\Router;
 
 class NumberToBasketRouteServiceProvider extends RouteServiceProvider
 {
+    public function register()
+    {
+        
+    }
+    
     public function map(Router $router)
     {
-        $router->post('number_to_basket', 'NumberToBasketController@add');
+        $router->post('number_to_basket', 'NumberToBasket\Controllers\NumberToBasketController@add');
     }
 }

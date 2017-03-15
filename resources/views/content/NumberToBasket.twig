@@ -1,16 +1,20 @@
-<div>
-    Artikel-Nr.
-    <input id="item-number" placeholder="123456">
-
-    <button text="Hinzufügen" onClick="send('/number_to_basket?number=' + document.getElementById('item-number').value + '&quantity=1')"></button>
+<div class="row">
+    <div class="col-xs-12 col-sm-7 m-b-1">
+        <div class="input-group">
+            <input type="text" class="form-control" id="item-number" placeholder="Artikel-Nr. / Artikel-ID">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" label="Hinzufügen"
+                        onclick="send('/number_to_basket?number=' + document.getElementById('item-number').value + '&quantity=1')">Hinzufügen</button>
+            </span>
+        </div>
+    </div>
 </div>
-
 <script>
-    function send(url)
-    {
+    function send(url) {
         var Httpreq = new XMLHttpRequest();
         Httpreq.open("POST", url, false);
         Httpreq.send(null);
-        return Httpreq.responseText;
+
+        location.reload();
     }
 </script>
