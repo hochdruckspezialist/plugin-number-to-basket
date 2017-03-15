@@ -4,4 +4,4 @@
 
 ### Funktionen
 
-- Artikel über die ID order Nr. in den Warenkorb legen
+- Artikel über ID oder Artikel-Nr. in den Warenkorb legen

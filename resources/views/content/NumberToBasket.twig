@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-xs-12 col-sm-7 m-b-1">
         <div class="input-group">
-            <input type="text" class="form-control" id="item-number" placeholder="Artikel-Nr. / Artikel-ID">
+            <input type="text" class="form-control" id="item-number" placeholder="{{ trans("NumberToBasket::QuickAdd.inputPlaceholder") }}">
             <span class="input-group-btn">
-                <button class="btn btn-primary" label="Hinzufügen"
-                        onclick="send('/number_to_basket?number=' + document.getElementById('item-number').value + '&quantity=1')">Hinzufügen</button>
+                <button class="btn btn-primary" label="{{ trans("NumberToBasket::QuickAdd.buttonLabel") }}"
+                        onclick="send('/number_to_basket?number=' + document.getElementById('item-number').value + '&quantity=1')">{{ trans("NumberToBasket::QuickAdd.add") }}</button>
             </span>
         </div>
     </div>
