@@ -4,4 +4,4 @@
 
 ### Features
 
-- Add an item by the ID or number to the basket
+- Add an item by the ID or item number to the shopping cart
