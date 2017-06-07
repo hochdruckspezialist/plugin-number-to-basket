@@ -4,7 +4,7 @@
 
 ### Behoben
 
-- Fehlender zweiter Parameter in der Funktion has_number()
+- Ein fehlender Parameter in der Funktion `has_number()` führte dazu, dass das Plugin nicht bereitgestellt werden konnte. Dies wurde behoben.
 
 ## v0.9.0 (2017-03-15)
 
