@@ -58,7 +58,7 @@ class NumberToBasketController extends Controller
         
             $variationFilter = pluginApp(VariationBaseFilter::class);
             $variationFilter->isActive();
-            $variationFilter->hasNumber($number);
+            $variationFilter->hasNumber($number, ElasticSearch::SEARCH_TYPE_EXACT);
         
             $documentSearch
                 ->addFilter($clientFilter)
