@@ -4,7 +4,7 @@
 
 ### Behoben
 
-- Fehler, der das Bauen des Plugins verhindert hat
+- Fehlender zweiter Parameter in der Funktion has_number()
 
 ## v0.9.0 (2017-03-15)
 
