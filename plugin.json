@@ -1,5 +1,5 @@
 {
-  "version"               : "0.9.1",
+  "version"               : "0.9.2",
   "name"                  : "NumberToBasket",
   "marketplaceName"      : {"de": "Quick Add","en": "Quick Add"},
   "description"           : "Item number to shopping cart plugin",

@@ -1,5 +1,11 @@
 # Release Notes für NumberToBasket
 
+## v0.9.2 (2017-08-17)
+
+### Behoben
+
+- Aufgrund eines Fehlers wurden Texte nicht richtig interpretiert. Dies wurde behoben.
+
 ## v0.9.1 (2017-06-07)
 
 ### Behoben
