@@ -1,14 +1,32 @@
-[
-  {
-    "tab"       : "Settings",
-    "key"       : "number.item_number",
-    "label"     : "Number which should be added to the basket",
-    "type"      : "dropdown",
-    "possibleValues" : {
-      "0" : "variation id",
-      "1" : "variation number",
-      "2" : "item id"
-    },
-    "default": "0"
-  },
-]
+{
+  "formatVersion": 1,
+  "menu": {
+      "Config.SettingsTab": {
+          "label": "Config.settingsTab",
+          "formFields": {
+              "number.item_number": {
+                  "type": "selectBox",
+                  "required": false,
+                  "label": "Config.settingsItemNumberLabel",
+                  "options": {
+                      "defaultValue": "1",
+                      "selectBoxValues": [
+                          {
+                              "value": "0",
+                              "caption": "Config.settingsItemNumberPossibleValue0"
+                          },
+                          {
+                              "value": "1",
+                              "caption": "Config.settingsItemNumberPossibleValue1"
+                          },
+                          {
+                              "value": "2",
+                              "caption": "Config.settingsItemNumberPossibleValue2"
+                          }
+                      ]
+                  }
+              }
+          }
+      }
+  }
+}

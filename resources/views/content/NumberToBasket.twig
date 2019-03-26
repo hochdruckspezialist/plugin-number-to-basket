@@ -4,17 +4,8 @@
             <input type="text" class="form-control" id="item-number" placeholder="{{ trans("NumberToBasket::QuickAdd.inputPlaceholder") }}">
             <span class="input-group-btn">
                 <button class="btn btn-primary" label="{{ trans("NumberToBasket::QuickAdd.buttonLabel") }}"
-                        onclick="send('/number_to_basket?number=' + document.getElementById('item-number').value + '&quantity=1')">{{ trans("NumberToBasket::QuickAdd.addButton") }}</button>
+                        onclick="sendBasketRequest( '{{ trans('NumberToBasket::QuickAdd.successMessage') }}', '{{ trans('NumberToBasket::QuickAdd.errorMessage') }}')">{{ trans("NumberToBasket::QuickAdd.addButton") }}</button>
             </span>
         </div>
     </div>
 </div>
-<script>
-    function send(url) {
-        var Httpreq = new XMLHttpRequest();
-        Httpreq.open("POST", url, false);
-        Httpreq.send(null);
-
-        location.reload();
-    }
-</script>

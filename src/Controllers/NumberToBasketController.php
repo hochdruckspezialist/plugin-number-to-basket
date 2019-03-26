@@ -2,6 +2,7 @@
 
 namespace NumberToBasket\Controllers;
 
+use IO\Services\BasketService;
 use Plenty\Plugin\Controller;
 use Plenty\Plugin\Http\Request;
 use Plenty\Modules\Basket\Models\BasketItem;
@@ -36,7 +37,10 @@ class NumberToBasketController extends Controller
             $basketItemRepository->addBasketItem($data);
         }
         
-        return '';
+        /** @var BasketService $basketService */
+        $basketService = pluginApp(BasketService::class);
+        
+        return $basketService->getBasketItemsForTemplate();
     }
     
     private function findItemByNumber($number)
