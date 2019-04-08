@@ -1,10 +1,17 @@
 # Quick Add – Artikel über ID oder Artikel-Nr. in den Warenkorb legen
 
-**Quick Add** ist ein Widget für plentymarkets 7 Webshops. Das Plugin erlaubt Ihnen, Artikel über Eingabe der ID order Artikel-Nr. in den Warenkorb zu legen.
+**Quick Add** ist ein Widget für plentymarkets 7 Webshops. Das Plugin erlaubt Ihnen, Artikel über Eingabe der ID oder Artikelnummer in den Warenkorb zu legen.
 
 ## Quick Add in plentymarkets einrichten
 
-Aktivieren Sie das Plugin. Das Plugin wird im verknüpften Container ausgegeben.
+1. Öffnen Sie das Menü **Plugins » Plugin-Übersicht**.
+2. Wählen Sie das gewünschte **Plugin-Set** aus.
+3. Filtern Sie die Plugins nach **Nicht installiert**.
+4. Klicken Sie in der Zeile des **Quick Add** Plugins in der Spalte **Aktion** auf **Plugin installieren**.
+5. Aktivieren Sie das Plugin durch Klick auf die Weltkugel in der Spalte **Aktiv**. Aktive Plugins sind blau hervorgehoben.
+6. Klicken Sie auf **Plugin-Set speichern & bereitstellen**.
+
+Sobald das Plugin aktiv ist, verknüpfen Sie es mit einem Layout-Container, um es an der gewünschten Stelle im Webshop auszugeben.
 
 ## Quick Add mit dem Webshop verknüpfen
 
@@ -12,11 +19,11 @@ Für das Plugin stehen Ihnen verschiedene Möglichkeiten zur Verfügung, um es i
 
 ##### Quick Add verknüpfen:
 
-1. Klicken Sie auf **Start » Plugins**.
-2. Wechseln Sie in das Tab **Content**. 
-3. Wählen Sie den Bereich **Quick Add input**.
-4. Wählen Sie den Container **Shopping Cart: Before the coupon input**.
-5. **Speichern** Sie die Einstellungen.<br /> → Das Plugin wird im gewählten Container im Webshop angezeigt.
+1. Öffnen Sie das Menü **CMS » Container-Verknüpfungen**.
+2. Wählen Sie das gewünschte Plugin-Set aus der Dropdown-Liste.
+3. Klappen Sie den Bereich **Quick add input (NumberToBasket)** auf.
+4. Wählen Sie einen Container, z.B. **Shopping Cart: Before the coupon input**.
+5. **Speichern** Sie die Einstellungen. <br /> → Das Plugin wird im gewählten Container im Webshop angezeigt.
 
 ## Lizenz
 

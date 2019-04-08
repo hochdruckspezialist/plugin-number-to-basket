@@ -1,5 +1,17 @@
 # Release Notes für NumberToBasket
 
+## v1.0.0 (2019-04-08)
+
+### Behoben
+
+- Durch einen Fehler konnte das Plugin unter neueren Ceres-Versionen nicht wie gewünscht eingebunden werden. Dies wurde behoben.
+
+### Geändert
+
+- Die Config-Struktur des Plugins wurde angepasst.
+- Das Markup des Plugins wurde auf den aktuellen Stand des Ceres Warenkorbs angepasst.
+- Beim Hinzufügen einer Nummer wird nun nicht mehr die gesamte Seite neu geladen.
+
 ## v0.9.2 (2017-08-17)
 
 ### Behoben
