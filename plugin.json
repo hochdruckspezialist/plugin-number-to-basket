@@ -4,7 +4,7 @@
   "marketplaceName"      : {"de": "Quick Add","en": "Quick Add"},
   "description"           : "Item number to shopping cart plugin",
   "namespace"             : "NumberToBasket",
-  "author"                : "plentymarkets GmbH",
+  "author"                : "plentysystems AG",
   "license"               : "AGPL-3.0",
   "pluginIcon"            : "icon_plugin_xs.png",
   "price"                 : 0.00,
