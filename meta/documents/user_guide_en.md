@@ -11,8 +11,6 @@
 5. **Activate** the plugin by clicking the globe icon in the **active** column. Active plugins are highlighted in blue.
 6. Click on **Save and deploy plugin set**.
 
-Sobald das Plugin aktiv ist, verknüpfen Sie es mit einem Layout-Container, um es an der gewünschten Stelle im Webshop auszugeben.
-
 When the plugin is active, you have to link it to a layout container in order to display it at the desired place in your online store.
 
 ## Linking Quick Add with the online store
@@ -26,7 +24,6 @@ You have multiple options to integrate the plugin in your online store.
 3. Uncollapse the section **Quick add input (NumberToBasket)**.
 4. Select a container, e.g. **Shopping Cart: Before the coupon input**.
 5. **Save** your settings. <br /> → The plugin is displayed in the selected container in the online store.
-
 
 ## License
 
