@@ -18,8 +18,7 @@ class NumberToBasketServiceProvider extends ServiceProvider
     {
         $dispatcher->listen('IO.Resources.Import', function (ResourceContainer $container)
         {
-            //$container->addStyleTemplate('AddressDoctor::Content.Styles');
-            $container->addScriptTemplate('NumberToBasket::Content.Scripts');
+            $container->addScriptTemplate('NumberToBasket::Templates.Scripts');
         }, 0);
     }
 }

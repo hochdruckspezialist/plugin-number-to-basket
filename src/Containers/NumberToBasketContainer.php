@@ -8,6 +8,6 @@ class NumberToBasketContainer
 {
     public function call(Twig $twig):string
     {
-        return $twig->render('NumberToBasket::Content.NumberToBasket');
+        return $twig->render('NumberToBasket::Templates.NumberToBasket');
     }
 }
