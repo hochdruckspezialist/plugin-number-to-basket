@@ -20,63 +20,59 @@ use Plenty\Plugin\Application;
 
 class NumberToBasketController extends Controller
 {
-    public function add(Request $request, BasketItemRepositoryContract $basketItemRepository)
+    /**
+     * @param Request $request
+     * @param BasketService $basketService
+     * @return array
+     */
+    public function add(Request $request, BasketService $basketService)
     {
         $data['variationId'] = $this->findItemByNumber($request->get('number', ''));;
         $data['quantity'] = $request->get('quantity', 1);
-        
-        $basketItem = $basketItemRepository->findExistingOneByData($data);
-        if($basketItem instanceof BasketItem)
-        {
-            $data['id']       = $basketItem->id;
-            $data['quantity'] = (int)$data['quantity'] + $basketItem->quantity;
-            $basketItemRepository->updateBasketItem($basketItem->id, $data);
-        }
-        else
-        {
-            $basketItemRepository->addBasketItem($data);
-        }
-        
-        /** @var BasketService $basketService */
-        $basketService = pluginApp(BasketService::class);
-        
+
+        $basketService->addBasketItem($data);
+
         return $basketService->getBasketItemsForTemplate();
     }
-    
+
+    /**
+     * @param $number
+     * @return mixed
+     */
     private function findItemByNumber($number)
     {
         $variationId = $number;
-        
+
         if(strlen($number))
         {
             $app = pluginApp(Application::class);
-            
+
             $documentProcessor = pluginApp(DocumentProcessor::class);
             $documentSearch = pluginApp(DocumentSearch::class, [$documentProcessor]);
-        
+
             $elasticSearchRepo = pluginApp(VariationElasticSearchSearchRepositoryContract::class);
             $elasticSearchRepo->addSearch($documentSearch);
-        
+
             $clientFilter = pluginApp(ClientFilter::class);
             $clientFilter->isVisibleForClient($app->getPlentyId());
-        
+
             $variationFilter = pluginApp(VariationBaseFilter::class);
             $variationFilter->isActive();
             $variationFilter->hasNumber($number, ElasticSearch::SEARCH_TYPE_EXACT);
-        
+
             $documentSearch
                 ->addFilter($clientFilter)
                 ->addFilter($variationFilter);
-        
+
             $result = $elasticSearchRepo->execute();
-            
+
             if(count($result['documents']))
             {
                 $variationId = $result['documents'][0]['data']['variation']['id'];
             }
         }
-        
+
         return $variationId;
     }
-    
+
 }
