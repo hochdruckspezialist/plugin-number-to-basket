@@ -1,29 +1,42 @@
 {
-  "version"               : "1.0.1",
-  "name"                  : "NumberToBasket",
-  "marketplaceName"      : {"de": "Quick Add","en": "Quick Add"},
-  "description"           : "Item number to shopping cart plugin",
-  "namespace"             : "NumberToBasket",
-  "author"                : "plentysystems AG",
-  "license"               : "AGPL-3.0",
-  "pluginIcon"            : "icon_plugin_xs.png",
-  "price"                 : 0.00,
-  "shortDescription"      : {"de": "Artikel schnell zum Warenkorb hinzufügen. ","en": "Quickly add items to the shopping cart."},
-  "authorIcon"            : "icon_author_xs.png",
-  "email"                 : "sales@plentymarkets.com",
-  "phone"                 : "+49 561 98 681 100",
-  "categories"            : ["3527"],
-  "keywords"              : ["container", "number", "shopping cart", "template", "widget"],
-  "type"                  : "general",
-  "require"               : [],
-  "serviceProvider"       : "NumberToBasket\\Providers\\NumberToBasketServiceProvider",
-  "javaScriptFiles"       : [],
-  "dataProviders"         :
-  [
-    {
-      "key"           : "NumberToBasket\\Containers\\NumberToBasketContainer",
-      "name"          : "Quick Add input",
-      "description"   : "Display an input for the item number"
-    }
-  ]
+    "version": "1.0.1",
+    "name": "NumberToBasket",
+    "marketplaceName": {
+        "de": "Quick Add",
+        "en": "Quick Add"
+    },
+    "description": "Item number to shopping cart plugin",
+    "namespace": "NumberToBasket",
+    "author": "plentysystems AG",
+    "license": "AGPL-3.0",
+    "pluginIcon": "icon_plugin_xs.png",
+    "price": 0.00,
+    "shortDescription": {
+        "de": "Artikel schnell zum Warenkorb hinzufügen. ",
+        "en": "Quickly add items to the shopping cart."
+    },
+    "authorIcon": "icon_author_xs.png",
+    "email": "sales@plentymarkets.com",
+    "phone": "+49 561 98 681 100",
+    "categories": [
+        "3527"
+    ],
+    "keywords": [
+        "container",
+        "number",
+        "shopping cart",
+        "template",
+        "widget"
+    ],
+    "type": "general",
+    "require": [],
+    "serviceProvider": "NumberToBasket\\Providers\\NumberToBasketServiceProvider",
+    "javaScriptFiles": [],
+    "dataProviders": [
+        {
+            "key": "NumberToBasket\\Containers\\NumberToBasketContainer",
+            "name": "Quick Add input",
+            "description": "Display an input for the item number"
+        }
+    ]
 }
