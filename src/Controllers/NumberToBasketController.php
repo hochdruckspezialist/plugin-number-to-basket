@@ -27,7 +27,10 @@ class NumberToBasketController extends Controller
 
         $basketService->addBasketItem($data);
 
-        return $basketService->getBasketItemsForTemplate();
+        return [
+            "basketItems" => $basketService->getBasketItemsForTemplate(),
+            "basket" => $basketService->getBasketForTemplate()
+        ];
     }
 
     /**
