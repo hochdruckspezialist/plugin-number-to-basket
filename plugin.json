@@ -30,7 +30,7 @@
     ],
     "type": "general",
     "require": {
-        "IO": ">= 4.0.0"
+        "IO": ">= 4.4.0"
     },
     "serviceProvider": "NumberToBasket\\Providers\\NumberToBasketServiceProvider",
     "javaScriptFiles": [],
