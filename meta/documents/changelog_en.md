@@ -1,5 +1,11 @@
 # Release Notes for NumberToBasket
 
+## v1.0.2 (2019-11-13)
+
+### Fixed
+
+- Due to an error, items could no longer be added to the shopping cart. This has been fixed.
+
 ## v1.0.1 (2019-04-18)
 
 ### Fixed

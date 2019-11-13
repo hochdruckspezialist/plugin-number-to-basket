@@ -1,5 +1,11 @@
 # Release Notes für NumberToBasket
 
+## v1.0.2 (2019-11-13)
+
+### Behoben
+
+- Durch einen Fehler konnten Artikel nicht mehr zum Warenkorb hinzugefügt werden. Dies wurde behoben.
+
 ## v1.0.1 (2019-04-18)
 
 ### Behoben
