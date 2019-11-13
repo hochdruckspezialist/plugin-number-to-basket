@@ -3,6 +3,7 @@
 namespace NumberToBasket\Controllers;
 
 use IO\Services\BasketService;
+use Plenty\Plugin\ConfigRepository;
 use Plenty\Plugin\Controller;
 use Plenty\Plugin\Http\Request;
 use Plenty\Modules\Cloud\ElasticSearch\Lib\ElasticSearch;
@@ -23,11 +24,29 @@ class NumberToBasketController extends Controller
      */
     public function add(Request $request, BasketService $basketService)
     {
-        $foundVariationId = $this->findVariationByNumber($request->get('number', ''));
-        if($foundVariationId <= 0)
+        /** @var ConfigRepository $configRepo */
+        $configRepo = pluginApp(ConfigRepository::class);
+        $configValue = (int)$configRepo->get('NumberToBasket.number.item_number', 0);
+        
+        switch($configValue)
         {
-            // Backup check, try parsing the number as a variationId
-            $foundVariationId = $this->findVariationById($request->get('number', 0));
+            case 0:
+                $foundVariationId = $this->findVariationById($request->get('number', 0));
+                break;
+            case 1:
+                $foundVariationId = $this->findVariationByNumber($request->get('number', ''));
+                break;
+            case 2:
+                $foundVariationId = $this->findVariationByNumber($request->get('number', ''));
+                if($foundVariationId <= 0)
+                {
+                    // Backup check, try parsing the number as a variationId
+                    $foundVariationId = $this->findVariationById($request->get('number', 0));
+                }
+                break;
+            default:
+                $foundVariationId = 0;
+                break;
         }
 
         if($foundVariationId <= 0)
