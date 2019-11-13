@@ -7,7 +7,6 @@
               "number.item_number": {
                   "type": "selectBox",
                   "required": false,
-                  "deprecated": true,
                   "label": "Config.settingsItemNumberLabel",
                   "options": {
                       "defaultValue": "1",
