@@ -29,7 +29,9 @@
         "widget"
     ],
     "type": "general",
-    "require": [],
+    "require": {
+        "IO": ">= 4.0.0"
+    },
     "serviceProvider": "NumberToBasket\\Providers\\NumberToBasketServiceProvider",
     "javaScriptFiles": [],
     "dataProviders": [
