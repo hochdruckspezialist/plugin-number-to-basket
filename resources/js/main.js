@@ -1,6 +1,6 @@
-function sendBasketRequest(successMessage, errorMessage) {
+function sendBasketRequest(successMessage, errorMessage, url) {
 
-    var url = '/number_to_basket?number=' + document.getElementById('item-number').value + '&quantity=1';
+    url = url + '?number=' + document.getElementById('item-number').value + '&quantity=1';
     var xhr = new XMLHttpRequest();
     vueApp.$store.commit("setIsBasketLoading", true);
 
