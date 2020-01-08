@@ -25,128 +25,80 @@ class NumberToBasketController extends Controller
     public function add(Request $request, BasketService $basketService)
     {
         /** @var ConfigRepository $configRepo */
-        $configRepo = pluginApp(ConfigRepository::class);
+        $configRepo  = pluginApp(ConfigRepository::class);
         $configValue = (int)$configRepo->get('NumberToBasket.number.item_number', 0);
         
-        switch($configValue)
-        {
+        switch ($configValue) {
             case 0:
-                $foundVariationId = $this->findVariationById($request->get('number', 0));
+                $foundVariationId = $this->findVariation($request->get('number', 0));
                 break;
             case 1:
-                $foundVariationId = $this->findVariationByNumber($request->get('number', ''));
+                $foundVariationId = $this->findVariation($request->get('number', ''), false);
                 break;
             case 2:
-                $foundVariationId = $this->findVariationByNumber($request->get('number', ''));
-                if($foundVariationId <= 0)
-                {
+                $foundVariationId = $this->findVariation($request->get('number', ''), false);
+                if ($foundVariationId <= 0) {
                     // Backup check, try parsing the number as a variationId
-                    $foundVariationId = $this->findVariationById($request->get('number', 0));
+                    $foundVariationId = $this->findVariation($request->get('number', 0));
                 }
                 break;
             default:
                 $foundVariationId = 0;
                 break;
         }
-
-        if($foundVariationId <= 0)
-        {
+        
+        if ($foundVariationId <= 0) {
             // Still no results, inform user about wrong id
             throw new \Exception("Nothing found.");
         }
-
+        
         $data['variationId'] = $foundVariationId;
-        $data['quantity'] = $request->get('quantity', 1);
-
+        $data['quantity']    = $request->get('quantity', 1);
+        
         $basketService->addBasketItem($data);
-
+        
         return [
             "basketItems" => $basketService->getBasketItemsForTemplate(),
             "basket" => $basketService->getBasketForTemplate()
         ];
     }
-
-    /**
-     * Use ElasticSearch to find a variation by it's variation.number
-     * Returns the found variations id, or 0 for not found
-     *
-     * @param $number
-     * @return int
-     */
-    private function findVariationByNumber($number)
+    
+    private function findVariation($number, $byId = true)
     {
         $variationId = 0;
-
-        if(strlen($number))
-        {
+        
+        if (strlen($number)) {
             $app = pluginApp(Application::class);
-
+            
             $documentProcessor = pluginApp(DocumentProcessor::class);
-            $documentSearch = pluginApp(DocumentSearch::class, [$documentProcessor]);
-
+            $documentSearch    = pluginApp(DocumentSearch::class, [$documentProcessor]);
+            
             $elasticSearchRepo = pluginApp(VariationElasticSearchSearchRepositoryContract::class);
             $elasticSearchRepo->addSearch($documentSearch);
-
+            
             $clientFilter = pluginApp(ClientFilter::class);
             $clientFilter->isVisibleForClient($app->getPlentyId());
-
+            
             $variationFilter = pluginApp(VariationBaseFilter::class);
             $variationFilter->isActive();
-            $variationFilter->hasNumber($number, ElasticSearch::SEARCH_TYPE_EXACT);
-
+            if ($byId) {
+                $variationFilter->hasId($number);
+            } else {
+                $variationFilter->hasNumber($number, ElasticSearch::SEARCH_TYPE_EXACT);
+            }
+            
+            
             $documentSearch
                 ->addFilter($clientFilter)
                 ->addFilter($variationFilter);
-
+            
             $result = $elasticSearchRepo->execute();
-
-            if(count($result['documents']))
-            {
+            
+            if (count($result['documents'])) {
                 $variationId = $result['documents'][0]['data']['variation']['id'];
             }
         }
-
+        
         return $variationId;
     }
-
-    /**
-     * @param $id
-     * @return int
-     */
-    private function findVariationById($id)
-    {
-        $variationId = 0;
-
-        if($id > 0)
-        {
-            $app = pluginApp(Application::class);
-
-            $documentProcessor = pluginApp(DocumentProcessor::class);
-            $documentSearch = pluginApp(DocumentSearch::class, [$documentProcessor]);
-
-            $elasticSearchRepo = pluginApp(VariationElasticSearchSearchRepositoryContract::class);
-            $elasticSearchRepo->addSearch($documentSearch);
-
-            $clientFilter = pluginApp(ClientFilter::class);
-            $clientFilter->isVisibleForClient($app->getPlentyId());
-
-            $variationFilter = pluginApp(VariationBaseFilter::class);
-            $variationFilter->isActive();
-            $variationFilter->hasId($id);
-
-            $documentSearch
-                ->addFilter($clientFilter)
-                ->addFilter($variationFilter);
-
-            $result = $elasticSearchRepo->execute();
-
-            if(count($result['documents']))
-            {
-                $variationId = $result['documents'][0]['data']['variation']['id'];
-            }
-        }
-
-        return $variationId;
-    }
-
 }
