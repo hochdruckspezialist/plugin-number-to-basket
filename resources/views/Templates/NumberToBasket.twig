@@ -2,7 +2,7 @@
     <input type="text" class="form-control" id="item-number" placeholder="{{ trans("NumberToBasket::QuickAdd.inputPlaceholder") }}">
     <span class="input-group-btn">
         <button class="btn btn-medium btn-primary" label="{{ trans("NumberToBasket::QuickAdd.buttonLabel") }}"
-                onclick="sendBasketRequest( '{{ trans('NumberToBasket::QuickAdd.successMessage') }}', '{{ trans('NumberToBasket::QuickAdd.errorMessage') }}')">{{ trans("NumberToBasket::QuickAdd.addButton") }}
+                onclick="sendBasketRequest( '{{ trans('NumberToBasket::QuickAdd.successMessage') }}', '{{ trans('NumberToBasket::QuickAdd.errorMessage') }}', '{{ url }}')">{{ trans("NumberToBasket::QuickAdd.addButton") }}
             <i aria-hidden="true" class="fa fa-plus"></i>
         </button>
     </span>
