@@ -1,5 +1,11 @@
 # Release Notes für NumberToBasket
 
+## v1.0.3 (2019-01-09)
+
+### Behoben
+
+- Das Hinzufügen von Artikeln zum Warenkorb resultierte in einer Fehlermeldung, wenn die Option "Immer anhängen" für die Einstellung "Slash (/) am Ende von URLs" aktiv war. Dies wurde behoben.
+
 ## v1.0.2 (2019-11-13)
 
 ### Behoben

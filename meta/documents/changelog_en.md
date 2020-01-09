@@ -1,5 +1,11 @@
 # Release Notes for NumberToBasket
 
+## v1.0.3 (2019-01-09)
+
+### Fixed
+
+- Adding items to the shopping cart led to an error notification if the option “Always append” was active for the setting “Trailing slash for URLs”. This has been fixed.
+
 ## v1.0.2 (2019-11-13)
 
 ### Fixed
