@@ -1,0 +1,21 @@
+{% import "Ceres::Widgets.Helper.WidgetHelper" as WidgetHelper %}
+
+{% set customClass = widget.settings.customClass.mobile %}
+{% set spacingSettings = widget.settings.spacing %}
+{% set inlinePadding   = WidgetHelper.getInlineSpacings(spacingSettings, spacingSettings.customPadding.mobile, "") %}
+{% set inlineMargin    = WidgetHelper.getInlineSpacings(spacingSettings, "", spacingSettings.customMargin.mobile) %}
+{% set spacingPadding  = WidgetHelper.getSpacingClasses(spacingSettings, spacingSettings.customPadding.mobile, "") %}
+{% set spacingMargin   = WidgetHelper.getSpacingClasses(spacingSettings, "",spacingSettings.customMargin.mobile) %}
+{% set appearance        = widget.settings.appearance.mobile %}
+
+<div class="{% if customClass | length > 0 %} {{ customClass }}{% endif %}{% if spacingMargin | length > 0 %} {{ spacingMargin }}{% endif %}" {% if inlineMargin | length > 0 %} style="{{ inlineMargin }}"{% endif %}>
+  <div class="input-group{% if spacingPadding | length > 0 %} {{ spacingPadding }}{% endif %}" {% if inlinePadding | length > 0 %} style="{{ inlinePadding }}"{% endif %}>
+      <input type="text" class="form-control" id="item-number" placeholder="{{ trans("NumberToBasket::QuickAdd.inputPlaceholder") }}">
+      <span class="input-group-btn">
+          <button class="btn btn-medium btn-{{appearance}}" label="{{ trans("NumberToBasket::QuickAdd.buttonLabel") }}"
+                  onclick="sendBasketRequest( '{{ trans('NumberToBasket::QuickAdd.successMessage') }}', '{{ trans('NumberToBasket::QuickAdd.errorMessage') }}', '/number_to_basket/{{ url }}')">{{ trans("NumberToBasket::QuickAdd.addButton") }}
+              <i aria-hidden="true" class="fa fa-plus"></i>
+          </button>
+      </span>
+  </div>
+</div>

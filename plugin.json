@@ -38,7 +38,8 @@
         {
             "key": "NumberToBasket\\Containers\\NumberToBasketContainer",
             "name": "Quick Add input",
-            "description": "Display an input for the item number"
+            "description": "Display an input for the item number",
+            "defaultLayoutContainer": "Ceres::BasketPreview.AfterBasketTotals"
         }
     ]
 }

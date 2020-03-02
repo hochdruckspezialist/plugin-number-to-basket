@@ -1,5 +1,12 @@
 # Release Notes für NumberToBasket
 
+## v1.1.0 (2020-03-02)
+
+### Geändert
+
+- Standardcontainerverknüpfung hinzugefügt (Shopping cart prewiew: After basket totals)
+- Shopbuilder Widget für die Warenkorbansicht hinzugefügt.
+
 ## v1.0.3 (2019-01-09)
 
 ### Behoben
